@@ -18,7 +18,8 @@ const BookDetails = (props) => {
   const [profile, setProfile] = useState({})
   const [modalData, setModalData] = useState({ isOpen: false, name: '', isEditing: false, id: null })
   const inputRef = useRef(null)
-  
+
+
   useEffect(() => {
     const fetchShelves = async () => {
       const profileData = await profileService.getOneProfile(props.user.profile)
@@ -46,6 +47,8 @@ const BookDetails = (props) => {
     if (modalData.isOpen && inputRef.current) inputRef.current.focus()
   }, [modalData.isOpen])
 
+
+
   const handleAddComment = async (commentFormData) => {
     const newComment = await bookService.createComment(volumeId, commentFormData)
     if (newComment) {
@@ -67,10 +70,8 @@ const BookDetails = (props) => {
   }
   
   const handleUpdateComment = async (volumeId, commentId, commentFormData) => {
-    console.log('VOLUMEID', volumeId)
-    console.log('COMMENTID', commentId)
-    console.log('COMMENTFORMDATA', commentFormData)
     try {
+      console.log('Updating comment with ID:', commentId)
       const updatedComment = await bookService.updateComment(volumeId, commentId, commentFormData);
       const updatedComments = comments.map((comment) => (comment._id === updatedComment._id ? updatedComment : comment))
       console.log('UPDATEDCOMMENTS',updatedComments)
@@ -199,9 +200,9 @@ const BookDetails = (props) => {
               handleAddComment={handleAddComment}
               handleDeleteComment={handleDeleteComment}
               volumeId={volumeId} 
-              // commentSavedUpdateRender={commentSavedUpdateRender}
               sortCommentsByCreatedAt={sortCommentsByCreatedAt}
               book={book}
+
             />
           </div>) : (
           <p>Loading...<img src={uglyCat}/></p>

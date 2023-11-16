@@ -6,11 +6,7 @@ import NewComment from "../NewComment/NewComment"
 import styles from "./Comments.module.css"
 
 const Comments = (props) => {
-
-  const [formOpen, setFormOpen] = useState(true)
   const [selectedComment, setSelectedComment] = useState(null)
-
-
 
   const sortedComments = props.comments.slice().sort((a, b) => {
     return new Date(b.createdAt) - new Date(a.createdAt)})
@@ -32,11 +28,11 @@ const Comments = (props) => {
         <CommentCard 
           key={`edit-${comment._id}`} 
           comment={comment} 
+          commentId={comment._id}
           comments={props.comments}
           user={props.user}
           volumeId={props.volumeId}
           setSelectedComment={setSelectedComment}
-          formOpen={formOpen}
           handleDeleteComment={async () => {
             await props.handleDeleteComment(
               props.volumeId,
@@ -45,7 +41,6 @@ const Comments = (props) => {
           }}
           handleUpdateComment={props.handleUpdateComment}
           selectedComment={selectedComment}
-          setFormOpen={setFormOpen}
         />
       ))}
       </div>

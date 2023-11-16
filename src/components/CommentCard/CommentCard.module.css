@@ -54,6 +54,9 @@
   width: 45px;
   height: 40px;
   margin-left: auto;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .commentCard .commentButtons button:hover {
@@ -91,6 +94,8 @@
 .commentText{
   line-height: 20px;
   margin-bottom: 15px;
+  text-align: center;
+  align-items: center;
 }
 
 .name{
@@ -99,4 +104,123 @@
 
 .emojis{
   margin-bottom: 10px;
+}
+
+
+
+.submit,
+.cancel {
+  display: inline-block;
+  background-color: #242526;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit{
+  background-color: rgb(18, 101, 58);
+}
+
+.cancel{
+  background-color: rgb(116, 11, 11);
+}
+.submit:hover,
+.cancel:hover {
+  background-color: #0056b3;
+}
+.btnRow{
+  display: flex;
+  flex-direction: row;
+  gap: 15px
+}
+
+textarea #textinput {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #2b2d2aeb;
+  color: #e8dddd;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 32px;
+  letter-spacing: .5px;
+  text-align: center;
+  outline: none;
+  box-shadow: 0 0 5px #0056b3;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea{
+  width: 100%;
+  min-width: 280px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.editComment {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  text-align: center;
+  gap: 15px;
+}
+
+
+.editDeleteBtns {
+  display: flex;
+  gap: 8px; /* Adjust the gap between buttons as needed */
+}
+
+.emojis {
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-bottom: 8px; /* Adjust the margin as needed */
+}
+
+.dropdownLabel {
+  font-size: 16px;
+  margin-right: 10px;
+  text-align: right;
+  color: #fffcfc;
+  width: 100px;
+  font-size: 20px;
+}
+
+.dropdownSelect {
+  padding: 5px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  color: #ffffff;
+  min-width: 70px;
+  outline: none;
+  box-shadow: 0 0 5px #0c0c0caf;
+  font-size: 16px; 
+}
+
+.editComment .h2Edit {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fffdfd;
+  font-weight: 600;
+  justify-content: center;
 }
