@@ -8,7 +8,7 @@ const CommentCard = (props) => {
     text: props.comment?.text,
     rating: props.comment?.rating,
   })
-  
+
   const handleToggleEditForm = () => {
     console.log('selectedComment:', props.comment)
     setIsEditingComment(!isEditingComment);
@@ -119,7 +119,7 @@ const CommentCard = (props) => {
           </div>
   
           <div className={styles.commentButtons}>
-            {props.user.profile === props.comment.commenter._id && (
+            {props.user && props.user.profile === props.comment.commenter._id && (
               <div className={styles.editDeleteBtns}>
                 <button onClick={handleToggleEditForm} disabled={props.isEditingComment === props.comment._id}>
                   ✏️
